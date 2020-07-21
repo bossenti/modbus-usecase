@@ -16,7 +16,7 @@ if __name__ == "__main__":
     df_data.drop(['timestamp', 'sp_internal_label', 'sensorId', 'time'], axis=1, inplace=True)
 
     # start a Modbus Client on localhost
-    client = ModbusTcpClient('localhost')
+    client = ModbusTcpClient('192.168.178.56')
 
     # iterate over each row of the data frame
     for idx, row in df_data.iterrows():

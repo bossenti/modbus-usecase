@@ -37,7 +37,7 @@ def run_server(ip_address, num_fields, port=502):
     context = ModbusServerContext(slaves=store, single=True)
 
     identity = ModbusDeviceIdentification()
-    identity.VendorName = 'Modbus Slave'
+    identity.VendorName = 'Modbus Replica'
     identity.ProductCode = 'MS'
     identity.ProductName = 'Streampipes Modbus Simulator'
     identity.ModelName = 'Modbus Slave'
@@ -47,4 +47,4 @@ def run_server(ip_address, num_fields, port=502):
 
 
 if __name__ == "__main__":
-    run_server("localhost", 502, 10)
+    run_server("192.168.178.56", 502, 10)
