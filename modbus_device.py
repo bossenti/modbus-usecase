@@ -18,10 +18,10 @@ log = logging.getLogger()
 log.setLevel(logging.DEBUG)
 
 
-def run_server(ip_address, num_fields, port=502):
+def run_server(ip_address, num_fields, port=5002):
     """
     Initiates a modbus server (device)
-    :param ip_address: ip_adress under which the Modbus device should be accessible
+    :param ip_address: ip address under which the Modbus device should be accessible
     :param port: port to which the server listens
     :param num_fields: length of the registers
     :return: None
@@ -47,4 +47,4 @@ def run_server(ip_address, num_fields, port=502):
 
 
 if __name__ == "__main__":
-    run_server("192.168.178.56", 502, 10)
+    run_server("localhost", num_fields=10000, port=5002)
