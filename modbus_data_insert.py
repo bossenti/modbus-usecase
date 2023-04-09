@@ -11,11 +11,10 @@ from pymodbus.client.sync import ModbusTcpClient
 
 @click.command()
 @click.option("--file", prompt="File path", help="The CSV file to be read in")
-@click.option("--delimiter", default=",", prompt="File delimiter", help="The delimiter used in the CSV file.")
-@click.option("--drop", default="", prompt="Columns to drop",
-              help="Column names to be dropped from the input data as comma separated string.")
-@click.option("--host", default="localhost", prompt="Modbus host", help="Address of the Modbus server.")
-@click.option("--wait", default=1, prompt="Waiting period", help="Duration in seconds between emitting data")
+@click.option("--delimiter", default=",", help="The delimiter used in the CSV file.")
+@click.option("--drop", default="", help="Column names to be dropped from the input data as comma separated string.")
+@click.option("--host", default="localhost", help="Address of the Modbus server.")
+@click.option("--wait", default=1, help="Duration in seconds between emitting data")
 def publish_data(file, delimiter, drop, host, wait) -> None:
     # read in flow data from csv
     df_data = pd.read_csv(file, sep=delimiter)
@@ -42,4 +41,3 @@ def publish_data(file, delimiter, drop, host, wait) -> None:
 
 if __name__ == "__main__":
     publish_data()
-
